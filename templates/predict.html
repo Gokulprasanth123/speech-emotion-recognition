@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body{
+            background-image: url('/static/pics/background.webp');
+            background-size: 100% 110vh;
+            background-repeat: no-repeat;
+        }
+        .img{
+            width:300px;
+            height:300px;
+            border-radius: 50%;
+            position: relative;
+            left:40%;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+    {% block content %}
+    {% if pred=='fearful' %}
+    <img src="{{fear}}" class="img"/>
+    <h1>Fearful</h1>
+    {% elif pred=='happy' %}
+    <img src="{{happy}}" class="img"/>
+    <h1>Happy</h1>
+    {% elif pred=='disgust' %}
+    <img src="{{disgust}}" class="img"/>
+    <h1>Disgust</h1>
+    {% elif pred=='calm' %}
+    <img src="{{calm}}" class="img"/>
+    <h1>Calm</h1>
+    {% endif %}
+    {% endblock content %}
+    </div>
+</body>
+
+</html>
