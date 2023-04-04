@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Speech Emotion Recognition</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' href='../styles/main.css'>
+    <style>
+        body{
+            overflow-y:hidden ;
+        }
+        .container {
+            width:50%;
+            height:98.5vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            background-color: blueviolet;
+        }
+        h1{
+            color:white;
+        }
+        .btn {
+            width: fit-content;
+            padding: 5px;
+            background-color: black;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .submit-btn {
+            padding: 8px;
+        }
+
+        .emotion-img {
+            width: 500px;
+            height: 50%;
+            border-radius: 50%;
+            position: relative;
+            left:130px;
+            top:150px;
+        }
+        .main-container{
+            display: flex;
+            flex-direction: row;
+        }
+        .side-nav{
+            width:50%;
+            height:100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Speech Emotion Recognition</h1>
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <input type="file" id="file" name="file" class="file-btn btn" />
+                <button type="submit" class="submit-btn btn">submit</button>
+            </form>
+        </div>
+        <div class="side-div">
+            <img src="{{image}}" alt="emotion" class="emotion-img" />
+        </div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>
